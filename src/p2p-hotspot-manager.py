@@ -82,6 +82,7 @@ wpa_cli -i wlo1 p2p_group_remove wlo1 || true
 for i in {{0..10}}; do wpa_cli -i wlo1 p2p_group_remove p2p-wlo1-$i || true; done
 killall dnsmasq || true
 net_id=$(wpa_cli -i wlo1 add_network)
+wpa_cli -i wlo1 set bgscan "" || true
 wpa_cli -i wlo1 set_network $net_id ssid '"{ssid}"'
 wpa_cli -i wlo1 set_network $net_id psk '"{psk}"'
 wpa_cli -i wlo1 set_network $net_id mode 3
