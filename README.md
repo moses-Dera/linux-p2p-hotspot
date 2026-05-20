@@ -28,10 +28,19 @@ It packages all the complex underlying routing, DHCP, and firewall rules into a 
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/linux-p2p-hotspot.git
+git clone https://github.com/moses-Dera/linux-p2p-hotspot.git
 cd linux-p2p-hotspot
 chmod +x install.sh
 ./install.sh
+```
+
+## Uninstallation
+
+To completely remove the application and its desktop shortcut:
+```bash
+cd linux-p2p-hotspot
+chmod +x uninstall.sh
+./uninstall.sh
 ```
 
 ## Usage
