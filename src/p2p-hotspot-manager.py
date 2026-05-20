@@ -98,6 +98,7 @@ if [ -z "$P2P_IFACE" ]; then
     exit 1
 fi
 ifconfig $P2P_IFACE 192.168.42.1 netmask 255.255.255.0 up || true
+iw dev wlo1 set power_save off || true
 sysctl -w net.ipv4.ip_forward=1 || true
 iptables -I INPUT -i $P2P_IFACE -j ACCEPT || true
 iptables -t nat -A POSTROUTING -o wlo1 -j MASQUERADE || true
