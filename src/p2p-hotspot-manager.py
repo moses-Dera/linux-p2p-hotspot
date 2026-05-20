@@ -132,6 +132,7 @@ echo "ALL_OK"
         script = """
 for i in {0..10}; do wpa_cli -i wlo1 p2p_group_remove p2p-wlo1-$i || true; done
 killall dnsmasq || true
+iw dev wlo1 set power_save on || true
 iptables -D INPUT -i p2p-wlo1-0 -j ACCEPT || true
 iptables -D INPUT -i p2p-wlo1-1 -j ACCEPT || true
 iptables -D INPUT -i p2p-wlo1-2 -j ACCEPT || true
